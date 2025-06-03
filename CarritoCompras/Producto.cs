@@ -8,5 +8,9 @@ namespace CarritoCompras
 {
     class Producto
     {
+        public int codigo, stock;
+        public float precio;
+        public string nombre;
+        public Categoria categoria;
     }
 }

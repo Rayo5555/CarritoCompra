@@ -8,5 +8,12 @@ namespace CarritoCompras
 {
     class Categoria
     {
+        public string nombre, descripcion;
+
+        public Categoria(string nombre, string descripcion)
+        {
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+        }
     }
 }
