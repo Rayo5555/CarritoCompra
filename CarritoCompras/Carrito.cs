@@ -59,23 +59,23 @@ namespace CarritoCompras
             {
                 if(itemCarrito.cantidad >= 5)
                 {
-                    total += (itemCarrito.producto.precio * itemCarrito.cantidad * 0.85);
+                    total += (itemCarrito.producto.precio * itemCarrito.cantidad * 0.85f);
                 }
                 else
                 {
                     total += itemCarrito.producto.precio * itemCarrito.cantidad;
                 }
             }
-            total = total * 1,21;
+            total = total * 1.21f;
             return total;
         }
 
         public void finalizarCompra(Tienda tienda)
         {
-            float total = Carrito.totalPagar();
+            float total = totalPagar();
             foreach(ItemCarrito itemCarrito in ItemCarrito)
             {
-                foreach(Producto producto in Producto)
+                foreach(Producto producto in tienda.Producto)
                 {
                     if (itemCarrito.producto == producto)
                     {
