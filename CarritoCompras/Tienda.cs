@@ -18,5 +18,40 @@ namespace CarritoCompras
                 Console.WriteLine(categoria.nombre);
             }
         }
+        public void listarProductos()
+        {
+            foreach (Producto producto in Producto)
+            {
+                Console.WriteLine(producto.nombre + " con un stock de: " + producto.stock + "unidades");
+            }
+        }
+
+        public void filtrarProductos(string nCategoria)
+        {
+            Categoria temporal = null;
+            foreach (Categoria categoria in Categoria)
+            {
+                if (categoria.nombre == nCategoria) 
+                {
+                    temporal = categoria;
+                }
+            }
+            if (temporal != null)
+            {
+                foreach (Producto producto in Producto)
+                {
+                    if(producto.categoria == temporal)
+                    {
+                        Console.WriteLine(producto.nombre + " con un stock de: " + producto.stock + "unidades");
+                    }
+                }
+            }
+            else 
+            {
+                Console.WriteLine("No se encontro la categoria");
+            }
+        }
+
+        
     }
 }

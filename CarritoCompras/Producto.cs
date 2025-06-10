@@ -12,5 +12,19 @@ namespace CarritoCompras
         public float precio;
         public string nombre;
         public Categoria categoria;
+
+        public Producto (int codigo, int stock, float precio, string nombre, Categoria categoria)
+        {
+            this.codigo = codigo;
+            this.stock = stock;
+            this.precio = precio;
+            this.nombre= nombre;
+            this.categoria = categoria;
+        }
+
+        public void restarStock(int cantidad)
+        {
+            stock = stock - cantidad;
+        }
     }
 }

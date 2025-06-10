@@ -6,7 +6,13 @@ namespace CarritoCompras
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hola");
+            int b = true;
+
+            while (b)
+            {
+                Console.WriteLine("1. Mostrar categorías disponibles");
+            } 
         }
     }
 }
