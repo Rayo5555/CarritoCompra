@@ -9,20 +9,24 @@ namespace CarritoCompras
     class Tienda
     {
         public List<Categoria> Categoria { get; set; } = new List<Categoria>();
-            Categoria.add(new Categoria("Electrónica", "Dispositivos y gadgets"));
-            Categoria.add(new Categoria("Ropa", "Indumentaria para todas las edades"));
-            Categoria.add(new Categoria("Alimentos", "Productos comestibles y bebidas"));
-            Categoria.add(new Categoria("Libros", "Libros físicos y electrónicos"));
-
         public List<Producto> Producto { get; set; } = new List<Producto>();
-            Productos.add(new Producto(1, 10, 599.99f, "Smartphone", Categoria[0]));
-            Productos.add(new Producto(2, 5, 299.99f, "Auriculares Bluetooth", Categoria[0]));
-            Productos.add(new Producto(3, 20, 49.99f, "Camiseta Deportiva", Categoria[1]));
-            Productos.add(new Producto(4, 15, 89.99f, "Pantalón Jeans", Categoria[1]));
-            Productos.add(new Producto(5, 50, 3.99f, "Botella de Agua", Categoria[2]));
-            Productos.add(new Producto(6, 30, 7.99f, "Chocolate 70% Cacao", Categoria[2]));
-            Productos.add(new Producto(7, 40, 19.99f, "Novela de Ciencia Ficción", Categoria[3]));
-            Producto.add(new Producto(8, 25, 14.99f, "Manual de Programación C#", Categoria[3]));
+
+            public Tienda(){
+                Categoria.Add(new Categoria("Electrónica", "Dispositivos y gadgets"));
+                Categoria.Add(new Categoria("Ropa", "Indumentaria para todas las edades"));
+                Categoria.Add(new Categoria("Alimentos", "Productos comestibles y bebidas"));
+                Categoria.Add(new Categoria("Libros", "Libros físicos y electrónicos"));
+        
+                Producto.Add(new Producto(1, 10, 599.99f, "Smartphone", Categoria[0]));
+                Producto.Add(new Producto(2, 5, 299.99f, "Auriculares Bluetooth", Categoria[0]));
+                Producto.Add(new Producto(3, 20, 49.99f, "Camiseta Deportiva", Categoria[1]));
+                Producto.Add(new Producto(4, 15, 89.99f, "Pantalón Jeans", Categoria[1]));
+                Producto.Add(new Producto(5, 50, 3.99f, "Botella de Agua", Categoria[2]));
+                Producto.Add(new Producto(6, 30, 7.99f, "Chocolate 70% Cacao", Categoria[2]));
+                Producto.Add(new Producto(7, 40, 19.99f, "Novela de Ciencia Ficción", Categoria[3]));
+                Producto.Add(new Producto(8, 25, 14.99f, "Manual de Programación C#", Categoria[3]));
+            }
+        
 
         public void listarCategorias()
         {
