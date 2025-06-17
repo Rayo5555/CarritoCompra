@@ -39,12 +39,33 @@ namespace CarritoCompras
         {
             foreach (Producto producto in Producto)
             {
-                Console.WriteLine(producto.nombre + " con un stock de: " + producto.stock + "unidades");
+                Console.WriteLine($"Código: {producto.codigo}");
+                Console.WriteLine($"Nombre: {producto.nombre}");
+                Console.WriteLine($"Stock: {producto.stock} unidades");
+                Console.WriteLine($"Precio: ${producto.precio:N2}");
+                Console.WriteLine("----------------------------------");
             }
+        }
+        public bool CategoriaExiste(string categoria)
+        {
+            return Categoria.Any(p  => p.nombre == categoria);
+        }
+
+        public bool ProductoExiste(int codigo)
+        {
+            return Producto.Any(p => p.codigo == codigo);
         }
 
         public void filtrarProductos(string nCategoria)
         {
+            if (string.IsNullOrWhiteSpace(nCategoria))
+            {
+                throw new ArgumentException("El nombre de la categoría no puede estar vacío.");
+            }
+            if (!CategoriaExiste(nCategoria))
+            {
+                throw new ArgumentException($"La categoría '{nCategoria}' no existe.");
+            }
             Categoria temporal = null;
             foreach (Categoria categoria in Categoria)
             {
@@ -59,7 +80,11 @@ namespace CarritoCompras
                 {
                     if(producto.categoria == temporal)
                     {
-                        Console.WriteLine(producto.nombre + " con un stock de: " + producto.stock + "unidades");
+                        Console.WriteLine($"Código: {producto.codigo}");
+                        Console.WriteLine($"Nombre: {producto.nombre}");
+                        Console.WriteLine($"Stock: {producto.stock} unidades");
+                        Console.WriteLine($"Precio: ${producto.precio:N2}");
+                        Console.WriteLine("----------------------------------");
                     }
                 }
             }
